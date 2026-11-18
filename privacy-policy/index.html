@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How the Alt+Q Notes Chrome extension handles local notes, optional Google Drive sync, and usage analytics.">
+  <link rel="icon" href="../assets/chair.png" type="image/png">
+  <link rel="stylesheet" href="../assets/site.css">
+  <title>Privacy Policy | Alt+Q Notes</title>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="wrap nav">
+      <a class="brand" href="../"><span class="mark"><img src="../assets/chair.png" width="26" height="26" alt=""></span>Alt+Q Notes</a>
+      <a class="nav-store" href="../">Back to homepage</a>
+    </div>
+  </header>
+  <main class="document" id="main">
+    <h1>Privacy Policy</h1>
+    <p class="details">Alt+Q Notes · RICO · Effective September 15, 2026 · Last updated November 18, 2026</p>
+    <p class="release-note"><strong>Version coverage.</strong> Alt+Q Notes v0.4.0 and later support optional Google Drive sync. The Drive disclosures below apply only when you connect sync. Earlier versions keep notes and attachments in your Chrome profile.</p>
+    <h2>1. Scope</h2>
+    <p>This policy explains how the <strong>Alt+Q Notes</strong> Chrome extension handles information when you create notes, attach images, save tabs, use the local calendar view, save a draft, connect optional Google Drive sync, and use features covered by usage analytics.</p>
+    <p>You can use the note-taking features without an account or cloud connection. Notes and attachments are stored in your current Chrome profile. Section 4 applies to v0.4.0 and later once you connect Google Drive sync. On first use, the extension presents its feature introduction and analytics disclosure. Note-taking starts after you choose <strong>Agree and start</strong>. Builds with analytics enabled then send the usage events described below to PostHog.</p>
+    <h2>2. Information We Handle and Why</h2>
+    <div class="table-scroll" role="region" aria-label="Extension data types" tabindex="0"><table><thead><tr><th scope="col">Information</th><th scope="col">Purpose</th><th scope="col">Storage and transmission</th></tr></thead><tbody>
+<tr><td>Note content, formatting, colors, ordering, and creation, modification, and deletion timestamps</td><td>Creating, displaying, organizing, and restoring notes</td><td>Stored locally; saved notes and their ordering also sync to your Drive if you connect sync</td></tr>
+<tr><td>Images and screenshots you paste, including image dimensions and formats</td><td>Attaching and previewing images</td><td>Stored locally; attachments to saved notes also sync to your Drive if you connect sync</td></tr>
+<tr><td>Open-tab titles and URLs read by tab-selection features, saved tabs, and note sources</td><td>Selecting tabs, saving links to notes, and reopening them</td><td>Processed locally for selection; only tabs and sources you save with a note are included in sync</td></tr>
+<tr><td>Note, revision, image and device identifiers, attachment hashes, and deletion records</td><td>Maintaining note relationships, ordering, Trash, sync integrity, and conflict recovery</td><td>Stored locally; technical records needed for sync are also stored in your Drive if you connect sync</td></tr>
+<tr><td>Unsaved draft text, images, and tab links</td><td>Resuming edits after the editor or browser closes</td><td>Stored locally in the current Chrome profile</td></tr>
+<tr><td>Installation identifiers, usage events, and environment information</td><td>Analyzing feature use, return use, and task success or failure, and improving the product</td><td>Sent to PostHog in builds with analytics enabled</td></tr>
+</tbody></table></div>
+    <p>The extension reads tab information in response to user actions needed for its note-taking features. It does not continuously collect your full browsing history. Image pasting is initiated by you; the extension does not continuously monitor your clipboard.</p>
+    <h2>3. Local Storage</h2>
+    <p>Notes and images are stored in the extension&#x27;s IndexedDB database. Settings, installation identifiers, and similar information are kept in Chrome extension storage. Session information and some temporary data are kept in browser session storage or memory.</p>
+    <p>Unsaved drafts and their attachments stay in the current Chrome profile. A draft is removed when you explicitly discard it or when its note is successfully saved. Local calendar settings and metadata stay on the device. Dates written in a saved note are part of its text and can sync with the note.</p>
+    <p>The operator does not receive a copy of your notes on its own servers or through analytics. Usage analytics contains only the coarse allowlisted information described in Section 5.</p>
+    <h2 id="google-drive">4. Optional Google Drive Sync</h2>
+    <p>In v0.4.0 and later, choose <strong>Sync across devices</strong> and approve Google’s authorization prompt to connect. The extension uses Chrome Identity to request the <code>drive.appdata</code> scope. This scope allows the extension to read, write, and delete its own application data in a hidden area of your Google Drive. Your ordinary Drive files are outside this scope.</p>
+    <p>While connected, the extension sends saved note content, formatting, colors, images and screenshots, saved tab titles and URLs, note sources, ordering, revisions, and Trash or permanent-deletion records directly to Google Drive over HTTPS. It uses this information to synchronize your saved notes across Chrome profiles and devices connected to the same Google account, resume interrupted uploads, and preserve conflicting edits. Unsaved drafts are stored locally. The extension stores an account identifier returned by Drive in your Chrome profile to detect account changes. Chrome Identity handles OAuth tokens for Drive requests. This account identifier and the tokens are excluded from analytics.</p>
+    <p>Use <strong>Log out</strong> in the extension to stop further sync. The notes already on the device and the copies in that Drive remain. You can also revoke the app&#x27;s Google access in your Google Account settings. If you choose to connect a different Google account, the extension can merge the saved notes remaining on this device with that account&#x27;s app data. See <a href="https://policies.google.com/privacy">Google&#x27;s Privacy Policy</a> for information about Google&#x27;s handling of data.</p>
+    <h2>5. PostHog Usage Analytics and First-Use Agreement</h2>
+    <p>Before you agree, the extension does not contact PostHog, create analytics installation/session/workflow identifiers, store pre-agreement actions for later upload, or allow access to the note-taking interface. If you close the panel, the disclosure appears again the next time you open it. When the disclosure changes materially, its version can require agreement again.</p>
+    <p>After you choose <strong>Agree and start</strong>, builds with analytics enabled send the following information to PostHog&#x27;s EU ingestion endpoint (<code>eu.i.posthog.com</code>):</p>
+    <ul>
+<li>Random installation, session, workflow, and event identifiers</li>
+<li>Event timestamps and sequence within a session</li>
+<li>Extension version, Chrome major version, and operating system family</li>
+<li>Events for completing agreement; opening note interfaces; first successful save; meaningful active days; opening, saving, or deleting notes; adding attachments; and the start, progress, and outcome of note creation and editing</li>
+<li>Calendar events for opening the calendar or a schedule popover, saving schedule adjustments, and responding to an inferred-time prompt</li>
+<li>Quick-note iframe outcomes and fixed fallback reason codes used to measure whether opening the editor or its side-panel recovery succeeded</li>
+<li>Feature entry points, attachment types, count ranges, whether tabs are attached, parser version, coarse date-format and time-interpretation categories, whether a schedule field changed, success/failure/cancellation outcomes, and predefined error codes</li>
+</ul>
+    <p>The installation identifier is used to recognize return use of the same installation and is not linked to your name or Google account. Because these identifiers distinguish repeated use, we do not describe this data as fully anonymous.</p>
+    <p><strong>Analytics events do not include note content or titles, note identifiers, exact dates or times, schedule titles or matched source text, images or screenshots, clipboard content, search terms, tab URLs or titles, Google account information, authentication tokens, keystrokes, raw error messages, or stack traces.</strong> We also do not use automatic pageview collection, DOM capture, screen recording, or session replay.</p>
+    <p>PostHog may receive your source IP address as part of network communication. The extension sends a setting that disables geographic enrichment. Server-side handling, including whether IP addresses are stored, depends on the actual PostHog project settings.</p>
+    <p>This release requires the first-use agreement to enter the product and does not provide a continue-without-analytics path. Disabling or uninstalling the extension stops future transmission. Builds with analytics disabled do not send events to PostHog even after agreement.</p>
+    <ul>
+<li>Analytics retention: We retain analytics data indefinitely, without a fixed retention period, to analyze long-term feature usage and return use. We do not set a scheduled automatic deletion deadline. Uninstalling the extension does not delete analytics data already sent.</li>
+<li>Analytics deletion requests: Contact ariadnelabs.contact@gmail.com with questions or requests about deleting analytics data. Analytics identifiers are not linked to your name or Google account, so your email address alone may not identify the events associated with your installation.</li>
+</ul>
+    <p>For information about PostHog&#x27;s own handling of data, see the <a href="https://posthog.com/privacy">PostHog Privacy Policy</a>.</p>
+    <h2>6. Sharing and Limits on Use</h2>
+    <p>The extension uses Google Drive for optional sync and PostHog for enabled usage analytics. Sections 4 and 5 describe what is sent to each service and why.</p>
+    <p>We do not sell user data or use it for personalized advertising. Note content is not provided to analytics services. User data handled through the extension is used to provide and improve note-taking and related user-facing features, in accordance with the Limited Use requirements of the <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">Chrome Web Store User Data Policy</a>.</p>
+    <p>Our use of data received through Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements. We use Google Drive data to provide sync and conflict recovery. We exclude it from analytics and advertising.</p>
+    <h2>7. Retention and Deletion</h2>
+    <h3>Notes and Images</h3>
+    <p>Notes remain on your device until you delete them. Deleted notes move to Trash. Items that have been in Trash for 30 days are permanently deleted when the extension&#x27;s cleanup process runs. You can also permanently delete notes from Trash yourself. Cleanup may be delayed while Chrome is not running.</p>
+    <h3>Synced Drive Data</h3>
+    <p>Synced note revisions and images remain in your Drive app data until they are removed. When a synced note is permanently deleted, a connected browser processes the deletion and removes its saved Drive revisions and attachments. A minimal deletion record can remain to prevent the same note from returning when another device reconnects. Cleanup can be delayed while the extension is offline or disconnected. If an unsynced edit conflicts with a permanent deletion, a copy of that edit can remain on the device where it was made.</p>
+    <p>To remove all hidden Alt+Q Notes app data from your Drive, disconnect sync on your devices and use Google Drive&#x27;s <strong>Settings → Manage apps → Options → Delete hidden app data</strong> for Alt+Q Notes when that option is available. You can find more information in <a href="https://support.google.com/accounts/answer/6374270">Google&#x27;s storage help</a>. You can separately remove the app&#x27;s access in <a href="https://myaccount.google.com/connections">Google Account connections</a>.</p>
+    <h3>Uninstalling</h3>
+    <p>Uninstalling the extension removes its stored data from that browser profile. Local migration backups created by earlier versions may remain in extension storage after individual notes are deleted.</p>
+    <p>Uninstalling the Chrome extension does not send a request to remove your Drive app data or analytics data already sent. Local data belonging to separate Chrome profiles or other installations must be removed from those profiles or installations separately.</p>
+    <h3>Usage Analytics</h3>
+    <p>Analytics data already sent is subject to the retention and deletion practices in Section 5. The operator cannot directly access your device&#x27;s note storage to delete notes for you.</p>
+    <h2>8. Security</h2>
+    <p>Communication with Google Drive and PostHog uses HTTPS. The extension does not add its own encryption to locally stored notes. You should protect access to your device and browser profile.</p>
+    <h2>9. Contact and Policy Changes</h2>
+    <p>For questions about privacy or data deletion, contact <strong><a href="mailto:ariadnelabs.contact@gmail.com">ariadnelabs.contact@gmail.com</a></strong>. Do not include note content or authentication tokens in your inquiry.</p>
+    <p>When this policy changes, we will update its content and effective date. Material changes to data handling will be accompanied by any required notices and consent procedures.</p>
+    <h2>10. This website</h2>
+    <p>The public website provides product information and links to the Chrome Web Store and email support. It does not require an account or run extension usage analytics. If you email support, we use the email address and information you provide to respond to your inquiry.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="../"><span class="mark"><img src="../assets/chair.png" width="26" height="26" alt=""></span>Alt+Q Notes</a>
+      <nav aria-label="Footer navigation">
+        <a href="./" aria-current="page">Privacy Policy</a>
+        <a href="../terms/">Terms of Service</a>
+        <a href="mailto:ariadnelabs.contact@gmail.com">Contact support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

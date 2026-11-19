@@ -12,6 +12,8 @@
   <link rel="canonical" href="https://altqnotes.app/">
   <link rel="icon" href="assets/chair.png" type="image/png">
   <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/site-analytics.css">
+  <script type="module" src="assets/site-analytics.mjs"></script>
   <title>Alt+Q Notes | Chrome Side Panel Notes, Images &amp; Tabs</title>
 </head>
 <body>
@@ -24,7 +26,7 @@
         <a href="#drive">Drive sync</a>
         <a href="privacy-policy/">Privacy</a>
       </nav>
-      <a class="nav-store" href="https://chromewebstore.google.com/detail/knicfhnamndglalkepemlojljnpdepjo">Chrome Web Store <span aria-hidden="true">↗</span></a>
+      <a class="nav-store" href="https://chromewebstore.google.com/detail/knicfhnamndglalkepemlojljnpdepjo?utm_source=altqnotes.app&amp;utm_medium=referral&amp;utm_campaign=homepage_header" data-store-placement="header" rel="noreferrer">Chrome Web Store <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
@@ -33,7 +35,7 @@
       <div class="hero-copy">
         <h1 id="hero-title">A chair for<br class="hero-break"> your mind.</h1>
         <p>Capture a thought, paste a screenshot, or save a set of tabs. Alt+Q Notes keeps it all in Chrome’s side panel, ready when you come back.</p>
-        <a class="button" href="https://chromewebstore.google.com/detail/knicfhnamndglalkepemlojljnpdepjo">Add to Chrome <span aria-hidden="true">↗</span></a>
+        <a class="button" href="https://chromewebstore.google.com/detail/knicfhnamndglalkepemlojljnpdepjo?utm_source=altqnotes.app&amp;utm_medium=referral&amp;utm_campaign=homepage_hero" data-store-placement="hero" rel="noreferrer">Add to Chrome <span aria-hidden="true">↗</span></a>
         <p class="version">Chrome extension · No account required for local notes</p>
       </div>
       <figure class="hero-figure">
@@ -85,9 +87,20 @@
       <nav aria-label="Footer navigation">
         <a href="privacy-policy/">Privacy Policy</a>
         <a href="terms/">Terms of Service</a>
+        <button id="analytics-preferences" class="analytics-link" type="button" hidden>Analytics preferences</button>
         <a href="mailto:ariadnelabs.contact@gmail.com">Contact support</a>
       </nav>
     </div>
   </footer>
+  <section class="analytics-notice" id="analytics-notice" aria-labelledby="analytics-title" hidden>
+    <div>
+      <h2 id="analytics-title">Optional website analytics</h2>
+      <p>Help us understand homepage visits and clicks to the Chrome Web Store. <a href="privacy-policy/#website-analytics">Learn more</a>.</p>
+    </div>
+    <div class="analytics-actions">
+      <button type="button" id="analytics-decline">Decline</button>
+      <button type="button" id="analytics-allow">Allow analytics</button>
+    </div>
+  </section>
 </body>
 </html>

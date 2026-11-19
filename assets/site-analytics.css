@@ -1,0 +1,45 @@
+.analytics-notice {
+  position: fixed;
+  z-index: 5;
+  inset-inline: 1rem;
+  bottom: 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: .85rem 1rem;
+  color: var(--ink, #25231e);
+  background: #fffdf8;
+  border: 1px solid var(--line, #cec8b9);
+  border-radius: .55rem;
+  box-shadow: 0 .3rem 1.3rem #27211826;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .65rem 1rem;
+}
+
+.analytics-notice[hidden],
+.analytics-link[hidden] { display: none; }
+.analytics-notice h2 { margin: 0; font-size: .95rem; }
+.analytics-notice p { margin: .3rem 0 0; font-size: .88rem; }
+.analytics-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+.analytics-actions button {
+  padding: .4rem .65rem;
+  border: 1px solid currentColor;
+  border-radius: .3rem;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: .88rem;
+}
+
+.analytics-link {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: underline;
+}

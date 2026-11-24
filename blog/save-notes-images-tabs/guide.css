@@ -1,0 +1,24 @@
+.guide { padding-block-end: clamp(3rem, 6vw, 5.5rem); }
+.guide-intro h1 { text-wrap: pretty; }
+.guide-lede { max-width: 38ch; font-size: clamp(1.12rem, 2.5vw, 1.38rem); color: var(--muted); }
+.guide-demo { margin-block: clamp(1.6rem, 5vw, 2.8rem) 0; }
+.guide-demo video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: #e8dfca;
+}
+.guide-demo figcaption { padding-top: .65rem; color: var(--muted); font-size: .8rem; }
+.guide section p { max-width: 68ch; }
+.guide-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}

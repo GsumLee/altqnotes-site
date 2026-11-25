@@ -15,6 +15,8 @@
   <link rel="icon" href="../../assets/chair.png" type="image/png">
   <link rel="stylesheet" href="../../assets/site.css">
   <link rel="stylesheet" href="guide.css">
+  <link rel="stylesheet" href="../../assets/site-analytics.css">
+  <script type="module" src="../../assets/site-analytics.mjs"></script>
   <title>How to Save Notes, Screenshots &amp; Tabs in Chrome | Alt+Q Notes</title>
 </head>
 <body>
@@ -22,7 +24,7 @@
   <header class="masthead">
     <div class="wrap nav">
       <a class="brand" href="../../"><span class="mark"><img src="../../assets/chair.png" width="26" height="26" alt=""></span>Alt+Q Notes</a>
-      <a class="nav-store" href="https://chromewebstore.google.com/detail/alt%2Bq-notes/knicfhnamndglalkepemlojljnpdepjo?utm_source=altqnotes.app&amp;utm_medium=referral&amp;utm_campaign=article_save_notes_images_tabs" rel="noreferrer">Chrome Web Store <span aria-hidden="true">↗</span></a>
+      <a class="nav-store" href="https://chromewebstore.google.com/detail/alt%2Bq-notes/knicfhnamndglalkepemlojljnpdepjo?utm_source=altqnotes.app&amp;utm_medium=referral&amp;utm_campaign=article_save_notes_images_tabs" data-store-placement="header" rel="noreferrer">Chrome Web Store <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
@@ -63,13 +65,14 @@
         <h2 id="common-questions">Common questions</h2>
         <h3>Do I need a Google account to save notes?</h3>
         <p>You can save notes, images, and tab links in your Chrome profile without a Google account. Connect a Google account if you choose to use Google Drive sync.</p>
+        <p><a href="../sync-chrome-notes-google-drive/">Set up Google Drive sync across two Chrome profiles</a>.</p>
         <h3>What does a saved tab link reopen?</h3>
         <p>It reopens the saved URL. A tab attachment stores the page title and URL. Paste a screenshot into the note if you want to keep a detail from the page as it looked at the time.</p>
         <p>See how to <a href="../research-tabs-with-notes/">keep the decisions and sources from a set of research tabs</a>.</p>
       </section>
 
       <div class="guide-cta">
-        <a class="button" href="https://chromewebstore.google.com/detail/alt%2Bq-notes/knicfhnamndglalkepemlojljnpdepjo?utm_source=altqnotes.app&amp;utm_medium=referral&amp;utm_campaign=article_save_notes_images_tabs" rel="noreferrer">Add Alt+Q Notes to Chrome <span aria-hidden="true">↗</span></a>
+        <a class="button" href="https://chromewebstore.google.com/detail/alt%2Bq-notes/knicfhnamndglalkepemlojljnpdepjo?utm_source=altqnotes.app&amp;utm_medium=referral&amp;utm_campaign=article_save_notes_images_tabs" data-store-placement="article" rel="noreferrer">Add Alt+Q Notes to Chrome <span aria-hidden="true">↗</span></a>
         <a href="altq-notes-30-second-demo.mp4" download>Download the demo</a>
       </div>
     </article>
@@ -81,9 +84,20 @@
       <nav aria-label="Footer navigation">
         <a href="../../privacy-policy/">Privacy Policy</a>
         <a href="../../terms/">Terms of Service</a>
+        <button id="analytics-preferences" class="analytics-link" type="button" hidden>Analytics preferences</button>
         <a href="mailto:ariadnelabs.contact@gmail.com">Contact support</a>
       </nav>
     </div>
   </footer>
+  <section class="analytics-notice" id="analytics-notice" aria-labelledby="analytics-title" hidden>
+    <div>
+      <h2 id="analytics-title">Optional blog analytics</h2>
+      <p>Help us see how readers reach these guides and whether they open the Chrome Web Store. <a href="../../privacy-policy/#website-analytics">Learn more</a>.</p>
+    </div>
+    <div class="analytics-actions">
+      <button type="button" id="analytics-decline">Decline</button>
+      <button type="button" id="analytics-allow">Allow analytics</button>
+    </div>
+  </section>
 </body>
 </html>
